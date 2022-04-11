@@ -733,8 +733,21 @@ MonoBehaviour:
   botaoGrip:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
-  earthRect: {fileID: 0}
+  earthRect: {fileID: 1584383922738167015, guid: 958ff89b6d48f974b997bb6d4f8e371b, type: 3}
   water: {fileID: 347123224}
+--- !u!65 &1849687438
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849687432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2075532259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -813,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.18
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z

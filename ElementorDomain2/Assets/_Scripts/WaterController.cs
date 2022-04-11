@@ -11,6 +11,7 @@ public class WaterController : MonoBehaviour {
     [SerializeField] public GameObject earthRect;
     
     [SerializeField] public ParticleSystem water;
+
     public List<ParticleCollisionEvent> collisionEvents;
     protected bool letPlay = true;
 
@@ -22,7 +23,7 @@ public class WaterController : MonoBehaviour {
         trackedObj = GetComponent<SteamVR_Behaviour_Pose>();
         collisionEvents = new List<ParticleCollisionEvent>();
     }
-
+    
     private void Update() {
         //Criar e prende objeto na mão do usuário
         if (joint == null && botao.GetStateDown(trackedObj.inputSource)) {
@@ -38,8 +39,12 @@ public class WaterController : MonoBehaviour {
             }
         }
         if (joint == null && botaoGrip.GetStateDown(trackedObj.inputSource)) {
-            Debug.Log("uwu");
             // Instantiate earth
+            Debug.Log("UWU earthhhhhh");
+            Vector3 pos = transform.position + (transform.forward);
+            pos.y = 0;
+            Instantiate(earthRect, pos, Quaternion.identity);
+            Debug.Log("Instanciei Terra");
         }
     }
 }
