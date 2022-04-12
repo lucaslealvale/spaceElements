@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Earth
+  - Enemy
+  - Hand
+  - Floor
+  - Fire
+  - Spawner
   layers:
   - Default
   - TransparentFX

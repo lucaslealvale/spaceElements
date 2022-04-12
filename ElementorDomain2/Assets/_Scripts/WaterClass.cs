@@ -16,7 +16,7 @@ public class WaterClass : MonoBehaviour {
 
         Rigidbody rb = other.GetComponent<Rigidbody>();
         int i = 0;
-        Debug.Log("collision detected");
+
         while (i < numCollisionEvents) {
             if (rb) {
                 Vector3 pos = collisionEvents[i].intersection;

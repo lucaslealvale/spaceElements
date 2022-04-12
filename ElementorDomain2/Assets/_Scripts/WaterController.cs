@@ -14,12 +14,14 @@ public class WaterController : MonoBehaviour {
 
     public List<ParticleCollisionEvent> collisionEvents;
     protected bool letPlay = true;
+    private AudioSource waterSound;
 
     SteamVR_Behaviour_Pose trackedObj;
     FixedJoint joint = null;
 
     private void Awake() {
         water.Stop();
+        waterSound = GetComponent<AudioSource>();
         trackedObj = GetComponent<SteamVR_Behaviour_Pose>();
         collisionEvents = new List<ParticleCollisionEvent>();
     }
@@ -29,22 +31,19 @@ public class WaterController : MonoBehaviour {
         if (joint == null && botao.GetStateDown(trackedObj.inputSource)) {
             if (!water.isPlaying) {
                 water.Play();
-                // Debug.Log("Start water");
+                waterSound.Play();
             }
         } else if (joint == null && botao.GetStateUp(trackedObj.inputSource)) {
             Debug.Log("Entrei no else");
             if(water.isPlaying) {
                 water.Stop();
-                // Debug.Log("Stop water");
+                waterSound.Stop();
             }
         }
         if (joint == null && botaoGrip.GetStateDown(trackedObj.inputSource)) {
-            // Instantiate earth
-            Debug.Log("UWU earthhhhhh");
-            Vector3 pos = transform.position + (transform.forward);
+            Vector3 pos = transform.position + 1.5f*(transform.forward);
             pos.y = 0;
             Instantiate(earthRect, pos, Quaternion.identity);
-            Debug.Log("Instanciei Terra");
         }
     }
 }
